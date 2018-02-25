@@ -1,7 +1,11 @@
+
+properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '')), pipelineTriggers([[$class: 'PeriodicFolderTrigger', interval: '1d']])])
+
 pipeline {
     agent any
 
     stages {
+    
         stage('Build') {
             steps {
                 echo 'Building..'
